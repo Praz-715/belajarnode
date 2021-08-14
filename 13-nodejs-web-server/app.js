@@ -21,10 +21,9 @@ http
         res.writeHead(200, {
             'Content-Type': 'text/html'
         })
-        const url = req.url;
 
         // Routing
-        switch (url) {
+        switch (req.url) {
             case '/about':
                 renderHTML('./about.html');
                 break;
