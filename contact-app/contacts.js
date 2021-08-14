@@ -88,7 +88,7 @@ const deleteContact = (nama) => {
     const newContacts = contacts.filter((contact) => contact.nama.toLowerCase() !== nama.toLowerCase());
 
     if (contacts.length === newContacts.length) {
-        console.log(chalk.red.inverse.bold(`${nama} tidak ditemukan`));
+        console.log(chalk.red.inverse.bold(`${nama} tidak di temukan`));
         return false;
     }
     fs.writeFileSync('data/contacts.json', JSON.stringify(newContacts));
