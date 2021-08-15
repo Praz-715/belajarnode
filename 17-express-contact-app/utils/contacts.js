@@ -1,4 +1,5 @@
 // Core module file system
+const { json } = require('express');
 const fs = require('fs');
 
 // buat folder data jika belom ada
@@ -28,4 +29,41 @@ const findContact = (nama) => {
     return contact;
 }
 
-module.exports = { loadContact, findContact };
+// menuliskan / menimpa file contact json dengan data baru
+const saveContacts = (contacts) => {
+    fs.writeFileSync('data/contacts.json', JSON.stringify(contacts));
+}
+
+
+// Menambah data contact baru
+const addContact = (contact) => {
+    const contacts = loadContact();
+    contacts.push(contact);
+    saveContacts(contacts);
+}
+
+// Cek duplikat
+const cekDuplikat = (nama) => {
+    const contacts = loadContact();
+    return contacts.find((contact) => contact.nama === nama);
+}
+
+//Hapus contact
+const deleteContact = (nama) => {
+    const contacts = loadContact();
+    const filterredContacts = contacts.filter((contact) => contact.nama !== nama);
+    saveContacts(filterredContacts);
+}
+
+const updateContact = (contactBaru) => {
+    const contacts = loadContact();
+    // Hilangkan kontak lama yang namanya sama dengan old nama
+    const filterredContacts = contacts.filter((contact) => contact.nama !== contactBaru.oldNama);
+    // Hapus elemen old nama dari conact baru
+    delete contactBaru.oldNama;
+    filterredContacts.push(contactBaru);
+    saveContacts(filterredContacts);
+
+}
+
+module.exports = { loadContact, findContact, addContact, cekDuplikat, deleteContact, updateContact };

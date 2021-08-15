@@ -1,15 +1,1 @@
-[{
-        "nama": "teguh",
-        "email": "teguh@mail.com",
-        "noHp": "123321"
-    },
-    {
-        "nama": "dony",
-        "noHp": "123321"
-    },
-    {
-        "nama": "aisah",
-        "email": "a@a.com",
-        "noHp": "085810137808"
-    }
-]
+[{"nama":"teguh","email":"teguh@mail.com","noHp":"123321"},{"nama":"dony","noHp":"123321"},{"nama":"Novariza","email":"nofa@mail.com","noHp":"085810137808"},{"nama":"andini putri","email":"andini@andini.com","noHp":"085810137808"},{"nama":"maryoto","email":"mayoto@yoto.yoto.id","noHp":"081122334455"}]
