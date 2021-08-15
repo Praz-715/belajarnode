@@ -1,0 +1,15 @@
+<h1>Hello
+    <%= nama %>
+</h1>
+
+<h4>Daftar Produk</h4>
+<% produk.forEach(element => { %>
+    <ul class="list-group">
+        <li class="list-group-item">Nama :
+            <%= element.nama %>
+        </li>
+        <li class="list-group-item">Harga :
+            <%= element.harga %>
+        </li>
+    </ul>
+    <% }) %>
